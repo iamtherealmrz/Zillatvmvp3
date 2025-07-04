@@ -1,0 +1,59 @@
+body {
+  background-color: #1a1a1a;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#tv-container {
+  position: relative;
+  width: 768px;
+  height: 768px;
+}
+#tv-frame {
+  width: 100%;
+}
+#screen {
+  position: absolute;
+  top: 100px;
+  left: 60px;
+  width: 648px;
+  height: 360px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#status-text {
+  color: #adff2f;
+  font-size: 1.2rem;
+  font-family: monospace;
+}
+#slider-toggle {
+  position: absolute;
+  bottom: 135px;
+  left: 95px;
+  width: 560px;
+  height: 40px;
+}
+#slider-knob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: auto;
+  cursor: pointer;
+  transition: left 0.2s ease;
+}
+#buttons {
+  position: absolute;
+  bottom: 50px;
+  left: 135px;
+  display: flex;
+  gap: 160px;
+}
+#skip-button, #pause-button {
+  width: 170px;
+  cursor: pointer;
+}
