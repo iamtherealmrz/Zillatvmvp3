@@ -4,8 +4,8 @@ const low  = ['assets/audio/low1.mp3','assets/audio/low2.mp3'];
 const high = ['assets/audio/high1.mp3','assets/audio/high2.mp3'];
 
 /* ---------- state ---------- */
-let rancid = 'low';        // 'low' or 'high'
-let idx    = 0;            // track index in current pool
+let rancid = 'low';
+let idx    = 0;
 let paused = false;
 
 /* ---------- elements ---------- */
@@ -22,12 +22,16 @@ function pool(){ return rancid === 'low' ? low : high; }
 function updateStatus(text){ statusEl.textContent = text; }
 
 function updateKnobPos(){
-  knobArt.style.left = rancid === 'low' ? '95px' : '575px';
+  const lowX  = '95px';
+  const highX = '575px';
+  const xPos  = rancid === 'low' ? lowX : highX;
+  knobArt.style.left = xPos;
+  knobHit.style.left = xPos;      // keep hit-box aligned
 }
 
 /* ---------- playback ---------- */
 function play(){
-  const track = pool()[idx];
+  const track = pool()[idx % pool().length];
   player.src = track;
   player.play();
   paused = false;
@@ -36,7 +40,7 @@ function play(){
 }
 
 function toggleRancid(){
-  rancid = rancid === 'low' ? 'high' : 'low';
+  rancid = (rancid === 'low') ? 'high' : 'low';
   idx = 0;
   play();
 }
@@ -47,16 +51,18 @@ function skipTrack(){
 }
 
 function togglePause(){
-  if (paused){
-    player.play(); paused = false;
+  if(paused){
+    player.play();
+    paused = false;
     updateStatus('Now Playing: ' + player.src.split('/').pop());
   }else{
-    player.pause(); paused = true;
+    player.pause();
+    paused = true;
     updateStatus('Paused');
   }
 }
 
-/* ---------- event binding ---------- */
+/* ---------- events ---------- */
 knobHit.addEventListener('click', toggleRancid);
 skipHit.addEventListener('click', skipTrack);
 pauseHit.addEventListener('click', togglePause);

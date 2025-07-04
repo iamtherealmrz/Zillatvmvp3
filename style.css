@@ -1,3 +1,4 @@
+
 /* === Global === */
 *{box-sizing:border-box}
 html,body{
@@ -21,15 +22,29 @@ html,body{
 #status{margin:0;font-size:20px}
 
 /* === Rancid slider art === */
-#sliderTrack{position:absolute; bottom:170px; left:95px; width:578px; pointer-events:none;}
-#knobArt{position:absolute; bottom:158px; left:95px; width:32px; pointer-events:none; transition:left .25s}
+#sliderTrack{
+  position:absolute;
+  bottom:170px; left:95px;
+  width:578px; pointer-events:none;
+}
+#knobArt{
+  position:absolute;
+  bottom:174px;              /* sits on track */
+  left:95px; width:32px;
+  pointer-events:none;
+  transition:left .25s;
+}
 
-/* === Invisible hit-boxes (actual clickable zones) === */
+/* === Invisible hit-boxes === */
 .hit{
   position:absolute; background:transparent; border:none; cursor:pointer; padding:0;
 }
 
-/* tune percentages/px if art changes */
-.knob {bottom:158px; left:95px;  width:32px;  height:40px;}
-.skip {bottom:65px;  left:140px; width:170px; height:60px;}
-.pause{bottom:65px;  right:140px;width:170px; height:60px;}
+.knob{
+  bottom:174px;
+  left:95px;
+  width:32px;
+  height:44px;
+}
+.skip{ bottom:65px; left:140px;  width:170px; height:60px;}
+.pause{bottom:65px; right:140px; width:170px; height:60px;}
