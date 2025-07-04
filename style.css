@@ -1,70 +1,35 @@
-
+/* === Global === */
+*{box-sizing:border-box}
 html,body{
-  margin:0;
-  height:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:#1b1b1b;
-  font-family:monospace;
-  color:#c8ff54;
+  height:100%; margin:0;
+  display:flex; justify-content:center; align-items:center;
+  background:#1b1b1b; font-family:monospace; color:#c8ff54;
 }
 
-#tv{
-  position:relative;
-  width:768px;
-  height:auto;
-}
+/* === TV frame === */
+#tv{position:relative;width:768px;}
+#frame{width:100%;display:block}
 
-#frame{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
+/* === Screen === */
 #screen{
   position:absolute;
-  top:100px;           /* adjust if needed */
-  left:60px;
-  width:648px;
-  height:360px;
+  top:100px; left:60px;
+  width:648px; height:360px;
   background:#000;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display:flex;justify-content:center;align-items:center;
+}
+#status{margin:0;font-size:20px}
+
+/* === Rancid slider art === */
+#sliderTrack{position:absolute; bottom:170px; left:95px; width:578px; pointer-events:none;}
+#knobArt{position:absolute; bottom:158px; left:95px; width:32px; pointer-events:none; transition:left .25s}
+
+/* === Invisible hit-boxes (actual clickable zones) === */
+.hit{
+  position:absolute; background:transparent; border:none; cursor:pointer; padding:0;
 }
 
-#status{
-  font-size:20px;
-}
-
-/* Slider track graphic */
-#sliderTrack{
-  position:absolute;
-  bottom:170px; /* adjust to sit under RANCID-O-METER text */
-  left:95px;
-  width:578px;
-  pointer-events:none;
-}
-
-/* Knob */
-#knob{
-  position:absolute;
-  bottom:165px;
-  left:95px;   /* low position */
-  width:32px;
-  cursor:pointer;
-  transition:left .25s ease;
-  z-index:2;
-}
-
-/* Buttons */
-.btn{
-  position:absolute;
-  bottom:65px;
-  width:170px;
-  cursor:pointer;
-}
-
-#skipBtn{ left:140px; }
-#pauseBtn{ right:140px; }
+/* tune percentages/px if art changes */
+.knob {bottom:158px; left:95px;  width:32px;  height:40px;}
+.skip {bottom:65px;  left:140px; width:170px; height:60px;}
+.pause{bottom:65px;  right:140px;width:170px; height:60px;}

@@ -6,23 +6,25 @@
   <title>Zilla TV MVP</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div id="tv">
+    <!-- Decorative CRT art -->
     <img src="assets/img/tv_frame.png" id="frame" alt="CRT Frame" />
 
+    <!-- Video / text screen -->
     <div id="screen">
       <p id="status">Loading…</p>
     </div>
 
-    <!-- slider track ( purely decorative ) -->
-    <img src="assets/img/rancid_slider.png" id="sliderTrack" alt="" />
+    <!-- Slider graphics (track + knob PNG) -->
+    <img src="assets/img/rancid_slider.png" id="sliderTrack" alt="">
+    <img src="assets/img/slider_knob.png"  id="knobArt"     alt="Knob">
 
-    <!-- interactive knob -->
-    <img src="assets/img/slider_knob.png" id="knob" alt="Rancid knob" />
-
-    <!-- buttons -->
-    <img src="assets/img/btn_skip.png" id="skipBtn" class="btn" alt="Skip" />
-    <img src="assets/img/btn_pause.png" id="pauseBtn" class="btn" alt="Pause" />
+    <!-- Invisible hit-boxes for perfect clicks -->
+    <button id="knobHit"  class="hit knob"  aria-label="Toggle Rancid"></button>
+    <button id="skipHit"  class="hit skip"  aria-label="Skip"></button>
+    <button id="pauseHit" class="hit pause" aria-label="Pause / Play"></button>
   </div>
 
   <audio id="player"></audio>
