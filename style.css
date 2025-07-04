@@ -1,36 +1,43 @@
-/* === Global / unchanged rules omitted for brevity === */
-
-#sliderTrack{
-  position:absolute;
-  bottom:170px; left:95px;
-  width:578px; pointer-events:none;
+/* === Global === */
+*{box-sizing:border-box}
+html,body{
+  height:100%; margin:0;
+  display:flex; justify-content:center; align-items:center;
+  background:#1b1b1b; font-family:monospace; color:#c8ff54;
 }
 
-/* brighter, larger knob with glow */
+/* === TV frame === */
+#tv{position:relative;width:768px;}
+#frame{width:100%;display:block}
+
+/* === Screen === */
+#screen{
+  position:absolute; top:100px; left:60px;
+  width:648px; height:360px;
+  background:#000;
+  display:flex;justify-content:center;align-items:center;
+}
+#status{margin:0;font-size:20px}
+
+/* === Slider track === */
+#sliderTrack{position:absolute; bottom:170px; left:95px; width:578px; pointer-events:none;}
+
+/* === CSS knob === */
 #knobArt{
   position:absolute;
-  bottom:170px;               /* sit right on track */
-  left:95px;
-  width:44px;                 /* bigger than 32px */
+  bottom:170px; left:95px;           /* LOW position */
+  width:38px; height:38px;
+  border-radius:50%;
+  background:#b0aaa0;
+  border:4px solid #000;
+  filter:drop-shadow(0 0 6px #c8ff54);
   pointer-events:none;
-  transition:left .25s, transform .15s;
-  filter:drop-shadow(0 0 6px #c8ff54) brightness(1.2);
+  transition:left .25s;
 }
 
-/* subtle pop on hover */
-.knob:hover + #knobArt,
-#knobArt:hover{
-  transform:scale(1.1);
-}
+/* === Invisible hit-boxes === */
+.hit{position:absolute; background:transparent; border:none; cursor:pointer; padding:0;}
 
-/* hit‑box enlarged to match bigger art */
-.knob{
-  bottom:170px;
-  left:95px;
-  width:44px;
-  height:48px;
-}
-
-/* skip/pause unchanged */
-.skip{ bottom:65px; left:140px;  width:170px; height:60px;}
-.pause{bottom:65px; right:140px; width:170px; height:60px;}
+.knob {bottom:170px; left:95px;  width:38px; height:44px;}
+.skip {bottom:65px;  left:140px; width:170px; height:60px;}
+.pause{bottom:65px;  right:140px;width:170px; height:60px;}

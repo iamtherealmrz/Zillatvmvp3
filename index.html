@@ -17,11 +17,12 @@
       <p id="status">Loading…</p>
     </div>
 
-    <!-- Slider graphics (track + knob PNG) -->
+    <!-- Slider graphics (track only) -->
     <img src="assets/img/rancid_slider.png" id="sliderTrack" alt="">
-    <img src="assets/img/slider_knob.png"  id="knobArt"     alt="Knob">
+    <!-- CSS‑drawn knob -->
+    <div id="knobArt"></div>
 
-    <!-- Invisible hit-boxes for perfect clicks -->
+    <!-- Invisible hit-boxes -->
     <button id="knobHit"  class="hit knob"  aria-label="Toggle Rancid"></button>
     <button id="skipHit"  class="hit skip"  aria-label="Skip"></button>
     <button id="pauseHit" class="hit pause" aria-label="Pause / Play"></button>
