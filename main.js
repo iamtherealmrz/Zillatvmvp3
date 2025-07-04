@@ -1,3 +1,4 @@
+
 /* ---------- audio pools ---------- */
 const low  = ['assets/audio/low1.mp3','assets/audio/low2.mp3'];
 const high = ['assets/audio/high1.mp3','assets/audio/high2.mp3'];
@@ -56,8 +57,8 @@ function togglePause(){
 }
 
 /* ---------- event binding ---------- */
-knobHit .addEventListener('click', toggleRancid);
-skipHit .addEventListener('click', skipTrack);
+knobHit.addEventListener('click', toggleRancid);
+skipHit.addEventListener('click', skipTrack);
 pauseHit.addEventListener('click', togglePause);
 
 /* ---------- init ---------- */
